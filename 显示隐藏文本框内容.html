@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			input {
+				color: #999;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="" id="" value="文字" />
+		<script type="text/javascript">
+			text = document.querySelector('input');
+			text.onfocus = function() {
+				if (text.value === '文字') {
+					text.value = '';
+					text.style.color = "#000";
+				}
+			}
+			text.onblur = function() {
+				if (text.value === '') {
+					text.value = '文字';
+					text.style.color='#999'
+				}
+			}
+		</script>
+	</body>
+</html>

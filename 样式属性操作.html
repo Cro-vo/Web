@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.nav {
+				margin: 20px auto;
+				width: 200px;
+				height: 200px;
+				background-color: #000;
+			}
+			
+			.change {
+				margin: 40px auto;
+				width: 200px;
+				height: 200px;
+				background-color: #00FFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="nav"></div>
+		<script type="text/javascript">
+			var div = document.querySelector('.nav');
+			div.onclick = function() {
+				this.className = 'change';
+			}
+		</script>
+	</body>
+</html>

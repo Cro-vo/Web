@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			li {
+				list-style: none;
+			}
+			.big {
+				width: 400px;
+				height: 400px;
+				border: 1px solid #000;
+				/* background-color: #00FFFF; */
+			}
+			.big .nav ul {
+				background-color: #ccc;
+				width: 100%;
+				height: 40px;
+				border-bottom: 1px solid red;
+			}
+			.big .nav ul li {
+				float: left;
+				padding: 10px 20px;
+			}
+			.current {
+				background-color: #ff0000;
+				color: #fff;
+			}
+			.content ul li {
+				display: none;
+			}
+			.show {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="big">
+			<div class="nav">
+				<ul>
+					<li class="current">商品介绍</li>
+					<li>规格与包装</li>
+					<li>售后保障</li>
+					<li>评价</li>
+				</ul>
+			</div>
+			<div class="content">
+				<ul>
+					<li style="display: block;">商品介绍</li>
+					<li>规格与包装</li>
+					<li>售后保障</li>
+					<li>评价</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var heads = document.querySelector('.nav').querySelectorAll('li');
+			var bodys = document.querySelector('.content').querySelectorAll('li');
+			console.log(bodys);
+			for (var i = 0; i < heads.length; i++) {
+				heads[i].setAttribute('index', i);
+
+				heads[i].onclick = function() {
+
+					for (var j = 0; j < heads.length; j++) {
+						heads[j].className = '';
+					}
+					this.className = 'current';
+					var this_index = this.getAttribute('index');
+					for (var k = 0; k < bodys.length; k++) {
+						bodys[k].style.display = 'none';
+					}
+					bodys[this_index].style.display = 'block';
+				}
+			}
+		</script>
+	</body>
+</html>

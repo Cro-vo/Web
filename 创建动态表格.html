@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			table {
+				width: 500px;
+				margin: 100px auto;
+				border-collapse: collapse;
+				text-align: center;
+			}
+
+			td,
+			th {
+				border: 1px solid #000;
+			}
+
+			thead tr {
+				height: 40px;
+				background-color: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<td>姓名</td>
+					<td>科目</td>
+					<td>成绩</td>
+					<td>操作</td>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+		<script type="text/javascript">
+			var dates = [{
+					name: '张三',
+					subject: 'java',
+					score: 99
+				},
+				{
+					name: '李四',
+					subject: 'java',
+					score: 98
+				},
+				{
+					name: '王五',
+					subject: 'java',
+					score: 100
+				},
+				{
+					name: '赵六',
+					subject: 'java',
+					score: 95
+				}
+			];
+			// console.log(dates[0].name);
+
+			var tbody = document.querySelector('tbody');
+			//创建行
+			for (var i = 0; i < dates.length; i++) {
+				var tr = document.createElement('tr');
+				tbody.appendChild(tr);
+				//创建内容列
+				for (var k in dates[i]) {
+					var td = document.createElement('td');
+					td.innerHTML = dates[i][k];
+					tr.appendChild(td);
+				}
+				//创建操作列
+				var td = document.createElement('td');
+				td.innerHTML = '<a href="javascript:;">删除</a>';
+				tr.appendChild(td);
+			}
+
+			//实现删除操作
+			var as = document.querySelectorAll('a');
+			for (var i = 0; i < as.length; i++) {
+				as[i].onclick = function() {
+					tbody.removeChild(this.parentNode.parentNode);
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			div {
+				margin: 300px auto;
+				position: relative;
+				height: 200px;
+				width: 200px;
+				background-color: aqua;
+			}
+			p {
+				position: absolute;
+				display: inline-block;
+				height: 18px;
+				width: 18px;
+				line-height: 18px;
+				text-align: center;
+				border: 1px solid #000;
+				top:-16px;
+				left: -20px;;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>X</p>
+		</div>
+		<script type="text/javascript">
+			var btn = document.querySelector('p');
+			var div = document.querySelector('div');
+			
+			btn.onclick = function(){
+				div.style.display='none';
+			}
+		</script>
+
+	</body>
+</html>

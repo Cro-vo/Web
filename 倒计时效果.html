@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				background-color: #000000;
+				color: #FFFFFF;
+				line-height: 50px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="hour">1</div>
+		<div class="minute">2</div>
+		<div class="second">3</div>
+		<script type="text/javascript">
+			var hour = document.querySelector('.hour');
+			var minute = document.querySelector('.minute');
+			var second = document.querySelector('.second');
+			
+			var inputTime = +new Date('2022-5-11 16:00:00');	
+			
+			countDown();
+			setInterval(countDown,1000);
+			
+			function countDown(time) {
+				var nowTime = +new Date();
+				var times = (inputTime - nowTime) / 1000;
+				var h = parseInt(times / 60 / 60 % 24);
+				h = h < 10 ? '0' + h : h;
+				var m = parseInt(times / 60 % 60);
+				m = m < 10 ? '0' + m : m;
+				var s = parseInt(times % 60);
+				s = s < 10 ? '0' + s : s;
+
+				hour.innerHTML = h;
+				minute.innerHTML = m;
+				second.innerHTML = s;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				background: url(img/001.jpg) repeat center top;
+			}
+
+			ul {
+				margin: 500px auto;
+				width: 1200px;
+				height: 450px;
+
+			}
+
+			ul li {
+				list-style: none;
+				height: 450px;
+				width: 400px;
+				float: left;
+				background-color: #00FFFF;
+				cursor: pointer;
+			}
+
+			ul li img {
+				height: 450px;
+				width: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><img src="img/001.jpg"></li>
+			<li><img src="img/002.jpg"></li>
+			<li><img src="img/003.jpg"></li>
+		</ul>
+		<script type="text/javascript">
+			var btn = document.querySelector('ul').querySelectorAll('img');
+			// console.log(btn);
+			for (var i = 0; i < btn.length; i++) {
+				btn[i].onclick = function (){
+					// console.log(btn[i].src);
+					document.body.style.backgroundImage = 'url('+ this.src +')';
+				}
+			}
+		</script>
+	</body>
+</html>

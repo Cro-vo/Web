@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="tel" name="" id="" value="" />
+		<button type="button">发送</button>
+		<script type="text/javascript">
+			var btn = document.querySelector('button');
+			var time = 3;
+			var timer = null;
+			btn.addEventListener('click', function() {
+				btn.disabled = true;
+				timer = setInterval(function() {
+					if (time != 0) {
+						btn.innerHTML = '还剩' + time + '秒';
+						time--;
+					} else if (time == 0) {
+						btn.innerHTML = '发送';
+						btn.disabled = false;
+						clearInterval(timer);
+						time = 3;
+					}
+				}, 1000);
+			})
+		</script>
+	</body>
+</html>
